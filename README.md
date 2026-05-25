@@ -40,3 +40,20 @@ The project is fully containerized. You do not need to install Go or PostgreSQL 
    ```bash
    git clone <your-repository-url>
    cd insider-league
+2. Start the application and the database using Docker Compose:
+   ```bash
+   docker-compose up --build
+3. The API will be available at http://localhost:8080..    
+4. Get League Standings Endpoint: GET /api/standings
+5. Get Matches By Week Endpoint: GET /api/matches?week={week_number}
+6. Simulate Next Week Endpoint: POST /api/simulate/next
+7. Play All Remaining Matches (Extra Feature ⭐) Endpoint: POST /api/simulate/all
+8. Edit Match Result (Extra Feature ⭐) Endpoint: PUT /api/match/edit
+Body (JSON):
+
+JSON
+{
+  "match_id": 1,
+  "home_score": 3,
+  "away_score": 0
+}
